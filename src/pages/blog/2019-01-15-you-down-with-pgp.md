@@ -356,6 +356,6 @@ To decrypt a file:
 
 The first parameter is the file to be decrypted the second is the file path of the new decrypted file.  The third parameter is your private key.  This only works if the sender used your public key to encrypt the file.
 
-And there you have it.. not so bad.
+And there you have it.. a working PGP example.
 
-You down with PGP? (ya you know me)..
+You down with PGP? (Yeah you know me)
