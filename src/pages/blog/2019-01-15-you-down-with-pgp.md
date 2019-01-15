@@ -19,3 +19,241 @@ On to the code:
 I found a Nuget package that accomplishes much of my objective.  <https://github.com/mattosaurus/PgpCore>
 
 I used this package to create a demo application in DDD style.  You clone or download the working example here: <https://github.com/mhorrall/PGPDemo>
+
+I'll explain the code starting with the PgpService in the infrastructure project. Here is the code:
+
+```
+ public class PgpService : IPgpService
+```
+
+```
+    {
+```
+
+```
+        public PgpDto GenerateKeys(string userName, string password, int length = 2048)
+```
+
+```
+        {
+```
+
+```
+            var pgpDto = new PgpDto();
+```
+
+```
+            using (var pgp = new PGP())
+```
+
+```
+            {
+```
+
+```
+                var publicKeyStream = new MemoryStream();
+```
+
+```
+                var privateKeyStream = new MemoryStream();
+```
+
+```
+
+```
+
+```
+                pgp.GenerateKey(publicKeyStream, privateKeyStream, userName, password, length);
+```
+
+```
+
+```
+
+```
+                pgpDto.PrivateKey = GetStringFromStream(privateKeyStream);
+```
+
+```
+                pgpDto.PublicKey = GetStringFromStream(publicKeyStream);
+```
+
+```
+            }
+```
+
+```
+
+```
+
+```
+            return pgpDto;
+```
+
+```
+        }
+```
+
+```
+
+```
+
+```
+        private string GetStringFromStream(MemoryStream ms)
+```
+
+```
+        {
+```
+
+```
+            ms.Position = 0;
+```
+
+```
+            var sr = new StreamReader(ms);
+```
+
+```
+            return sr.ReadToEnd();
+```
+
+```
+        }
+```
+
+```
+
+```
+
+```
+        private static Stream GenerateStreamFromString(string s)
+```
+
+```
+        {
+```
+
+```
+            var stream = new MemoryStream();
+```
+
+```
+            var writer = new StreamWriter(stream);
+```
+
+```
+            writer.Write(s);
+```
+
+```
+            writer.Flush();
+```
+
+```
+            stream.Position = 0;
+```
+
+```
+            return stream;
+```
+
+```
+        }
+```
+
+```
+
+```
+
+```
+        public void EncryptFile(string inputFilePath, string outputFilePath, string publicKey)
+```
+
+```
+        {
+```
+
+```
+            using (var pgp = new PGP())
+```
+
+```
+            {
+```
+
+```
+                using (FileStream inputFileStream = new FileStream(inputFilePath, FileMode.Open))
+```
+
+```
+                using (Stream outputFileStream = File.Create(outputFilePath))
+```
+
+```
+                using (Stream publicKeyStream = GenerateStreamFromString(publicKey))
+```
+
+```
+                    pgp.EncryptStream(inputFileStream, outputFileStream, publicKeyStream, true, true);
+```
+
+```
+            }
+```
+
+```
+        }
+```
+
+```
+
+```
+
+```
+        public void DecryptFile(string inputFilePath, string outputFilePath, string privateKey, string password)
+```
+
+```
+        {
+```
+
+```
+            using (var pgp = new PGP())
+```
+
+```
+            {
+```
+
+```
+                using (FileStream inputFileStream =
+```
+
+```
+                    new FileStream(inputFilePath, FileMode.Open))
+```
+
+```
+                using (Stream outputFileStream = File.Create(outputFilePath))
+```
+
+```
+                using (Stream privateKeyStream = GenerateStreamFromString(privateKey))
+```
+
+```
+                    pgp.DecryptStream(inputFileStream, outputFileStream, privateKeyStream, password);
+```
+
+```
+            }
+```
+
+```
+        }
+```
+
+```
+    }
+```
