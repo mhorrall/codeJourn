@@ -4,7 +4,7 @@ path: /pgp
 title: You down with PGP?
 date: '2019-01-15T14:41:53-06:00'
 ---
-I recently was given a task at work to encrypt / decrpyt files using PGP.  I had never even heard of PGP so I thought it would make a good blog post.
+I recently was given a task at work to encrypt / decrypt files using PGP.  I had never even heard of PGP so I thought it would make a good blog post.
 
 1. What is PGP?
 
@@ -12,7 +12,7 @@ PGP literally stands for Pretty Good Privacy.  The name is not exactly inspiring
 
 2. How do I use it?
 
-The TL/DR version is that you generate a set of private and public keys.  The public key you give to anyone that wants to send you an encrypted file.  You then use your private key (and a passphrase) to decrypt the file.  It is a one way communication if you wish to send a file back you will need the recipient's public key.
+The TL/DR version is that you generate a set of private and public keys.  The public key you give to anyone that wants to send you an encrypted file.  You then use your private key (and a passphrase) to decrypt the file.  It is a one-way communication if you wish to send a file back you will need the recipient's public key.
 
 On to the code:
 
@@ -258,7 +258,7 @@ Here is the code in the PgpService inside the infrastructure project:
     }
 ```
 
-I used steams because in production I am storing and retrieving the keys in a Vault and I wanted to be able to pass in those keys as strings when working with the encryption service.  I used <https://www.vaultproject.io/> in to persist the keys in production but standing up a vault server is outside the scope of this post.
+I used steams because in production I am persisting the keys in a vault and I wanted to be able to pass in those keys as strings when working with the encryption service.  I used <https://www.vaultproject.io/> in to store the keys in production but standing up a vault server is outside the scope of this post.
 
 To generate keys:
 
