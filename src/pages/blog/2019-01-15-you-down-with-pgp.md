@@ -326,4 +326,36 @@ To encrypt a file:
         }
 ```
 
-The first parameter is the file to be encrypted the second parameter is the newly created encrypted file path, and the third is the public key.  (If you were encrypting this file for another party you would need their public key here.)
+The first parameter is the file to be encrypted the second parameter is the newly created encrypted file path, and the third is the public key.  (If you were encrypting this file for another party you would need their public key here.)  The encrypted file is usually named with a ".pgp" extension.
+
+To decrypt a file:
+
+```
+        private static void DecryptFile(string filePath)
+```
+
+```
+        {
+```
+
+```
+            PgpService.DecryptFile(filePath, "DecryptedFile.txt", _pgpDto.PrivateKey, _password);
+```
+
+```
+            Console.WriteLine("File has been decrypted");
+```
+
+```
+            Console.ReadLine();
+```
+
+```
+        }
+```
+
+The first parameter is the file to be decrypted the second is the file path of the new decrypted file.  The third parameter is your private key.  This only works if the sender used your public key to encrypt the file.
+
+And there you have it.. not so bad.
+
+You down with PGP? (ya you know me)..
