@@ -299,3 +299,29 @@ To generate keys:
 ```
 
 Here I am passing in a username and password.  The method returns a Data Transfer Object (DTO) that is defined in the PgpDemo.Core project.  For this example its and object that contains a private and public key.  Normally you would then store these values for future use but for this example they are just class variables so you will need to re-generate them each time the application is run.
+
+To encrypt a file:
+
+```
+        private static void EncryptFile(string filePath)
+```
+
+```
+        {
+```
+
+```
+            PgpService.EncryptFile(filePath, "EncryptedFile.pgp", _pgpDto.PublicKey);
+```
+
+```
+            Console.WriteLine("File has been encrypted");
+```
+
+```
+            Console.ReadLine();
+```
+
+```
+        }
+```
