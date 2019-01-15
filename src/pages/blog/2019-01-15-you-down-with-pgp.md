@@ -20,7 +20,7 @@ I found a Nuget package that accomplishes much of my objective.  <https://github
 
 I used this package to create a demo application in DDD style.  You clone or download the working example here: <https://github.com/mhorrall/PGPDemo>
 
-I'll explain the code starting with the PgpService in the infrastructure project. Here is the code:
+Here is the code in the PgpService inside the infrastructure project:
 
 ```
  public class PgpService : IPgpService
@@ -257,3 +257,5 @@ I'll explain the code starting with the PgpService in the infrastructure project
 ```
     }
 ```
+
+I used steams because in production I am storing and retrieving the keys in a Vault and I wanted to be able to pass in those keys as strings when working with the encryption service.  I used <https://www.vaultproject.io/> in to store the keys in production but standing that up is outside the scope of this post.
