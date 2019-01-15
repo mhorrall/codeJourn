@@ -15,3 +15,7 @@ PGP literally stands for Pretty Good Privacy.  The name is not exactly inspiring
 The TL/DR version is that you generate a set of private and public keys.  The public key you give to anyone that wants to send you an encrypted file.  You then use your private key (and a passphrase) to decrypt the file.  It is a one way communication if you wish to send a file back you will need the recipient's public key.
 
 On to the code:
+
+I found a Nuget package that accomplishes much of my objective.  <https://github.com/mattosaurus/PgpCore>
+
+I used this package to create a demo application in DDD style.  You clone or download the working example here: <https://github.com/mhorrall/PGPDemo>
