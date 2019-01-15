@@ -298,7 +298,7 @@ To generate keys:
         }
 ```
 
-Here I am passing in a username and password.  The method returns a Data Transfer Object (DTO) that is defined in the PgpDemo.Core project.  Its a class has two string properties one for the public key and another for the private key.  Normally you would store these values for future use but for this example they are just class variables so you will need to re-generate them each time the application is run.
+Here I am passing in a username and password.  The method returns a Data Transfer Object (DTO) that is defined in the PgpDemo.Core project.  It's a class that has two string properties one for the public key and another for the private key.  Normally you would store these values for future use but for this example they are just class variables so you will need to re-generate them each time the application is run.
 
 To encrypt a file:
 
@@ -356,6 +356,6 @@ To decrypt a file:
 
 The first parameter is the file to be decrypted the second is the file path of the new decrypted file.  The third parameter is your private key.  This only works if the sender used your public key to encrypt the file.
 
-And there you have it.. a working PGP example.
+And there you have a working PGP example.
 
 You down with PGP? (Yeah you know me)
