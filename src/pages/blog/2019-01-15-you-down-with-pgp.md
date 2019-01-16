@@ -2,24 +2,23 @@
 contentType: blog
 path: /pgp
 title: You down with PGP?
-date: "2019-01-15T14:41:53-06:00"
+date: '2019-01-15T14:41:53-06:00'
 ---
-
 I recently was given a task at work to encrypt / decrypt files using PGP. I had never even heard of PGP so I thought it would make a good blog post.
 
-1. What is PGP?
+## What is PGP?
 
 PGP literally stands for Pretty Good Privacy. The name is not exactly inspiring but it is widely used to encrypt sensitive files and messages. <https://en.wikipedia.org/wiki/Pretty_Good_Privacy>
 
-2. How do I use it?
+## How do I use it?
 
 The TL/DR version is that you generate a set of private and public keys. The public key you give to anyone that wants to send you an encrypted file. You then use your private key (and a passphrase) to decrypt the file. It is a one-way communication if you wish to send a file back you will need the recipient's public key.
 
-On to the code:
+## **On to the code..**
 
 I found a Nuget package that accomplishes much of my objective. <https://github.com/mattosaurus/PgpCore>
 
-I used this package to create a demo application in DDD style. You can clone or download the working example here: <https://github.com/mhorrall/PGPDemo>
+I used this package to create a demo application in Domain Driven Design (DDD) style architecture. You can clone or download the working example here: <https://github.com/mhorrall/PGPDemo>
 
 Here is the code in the PgpService inside the infrastructure project:
 
@@ -125,8 +124,8 @@ To decrypt a file:
     }
 ```
 
-The first parameter is the file to be decrypted the second is the file path of the new decrypted file. The third parameter is your private key. This only works if the sender used your public key to encrypt the file.
+The first parameter is the file to be decrypted the second is the file path of the new decrypted file, the third parameter is your private key. This only works if the sender used your public key to encrypt the file.
 
-And there you have a working PGP example.
+And there you have a working PGP example...
 
-You down with PGP? (Yeah you know me)
+You down with PGP?
