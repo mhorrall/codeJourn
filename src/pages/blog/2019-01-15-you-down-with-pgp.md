@@ -4,7 +4,7 @@ path: /pgp
 title: You down with PGP?
 date: '2019-01-15T14:41:53-06:00'
 ---
-I recently was given a task at work to encrypt / decrypt files using PGP. I had never even heard of PGP so I thought it would make a good blog post.
+I recently was given a task at work to encrypt / decrypt files using PGP. Prior to this assignment I had never even heard of PGP so I thought it would make a good blog post.
 
 ### What is PGP?
 
@@ -85,7 +85,7 @@ Here is the code in the PgpService inside the infrastructure project:
 
 I used streams because in production I am persisting the keys in a vault and I wanted to be able to pass in those keys as strings when working with the encryption service. I used <https://www.vaultproject.io/> to store the keys in production but standing up a vault server is outside the scope of this post.
 
-To generate keys:
+**To generate keys:**
 
 ```csharp
     private static void GenerateKeys()
@@ -100,7 +100,7 @@ To generate keys:
 
 Here I am passing in a username and password. The method returns a Data Transfer Object (DTO) that is defined in the PgpDemo.Core project. It's a class that has two string properties one for the public key and another for the private key. Normally you would store these values for future use but for this example they are just class variables so you will need to re-generate them each time the application is run.
 
-To encrypt a file:
+**To encrypt a file:**
 
 ```csharp
     private static void EncryptFile(string filePath)
@@ -113,7 +113,7 @@ To encrypt a file:
 
 The first parameter is the file to be encrypted the second parameter is the newly created encrypted file path, and the third is the public key. (If you were encrypting this file for another party you would need their public key here.) The encrypted file is usually named with a ".pgp" extension.
 
-To decrypt a file:
+**To decrypt a file:**
 
 ```csharp
     private static void DecryptFile(string filePath)
