@@ -7,7 +7,8 @@ import { StaticQuery, graphql } from 'gatsby'
 
 // code syntax-highlighting theme
 // feel free to change it to another one
-import 'prismjs/themes/prism-twilight.css'
+//import 'prismjs/themes/prism-twilight.css'
+import 'prismjs/themes/prism-vs.css'
 
 // main site style
 import './index.scss'
