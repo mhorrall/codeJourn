@@ -3,7 +3,11 @@ contentType: blog
 path: /pgp
 title: You down with PGP?
 date: '2019-01-15T14:41:53-06:00'
+attachments:
+  - filename: /files/downwithpgp.png
 ---
+![](/files/downwithpgp.png)
+
 I recently was given a task at work to encrypt / decrypt files using PGP. Prior to this assignment I had never even heard of PGP so I thought it would make a good blog post.
 
 ### What is PGP?
