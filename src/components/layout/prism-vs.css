@@ -16,9 +16,9 @@ pre[class*="language-"] {
   font-size: 0.95em;
   line-height: 1.2em;
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
 
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -42,13 +42,12 @@ code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: .2em;
-  margin: 0.6em 0;
+  padding: 0.2em;
+  margin: 0.6em 0.5em;
   overflow: auto;
   border: 1px solid #dddddd;
   background-color: white;
   z-index: -1;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* Inline code */
@@ -58,6 +57,17 @@ pre[class*="language-"] {
   padding-bottom: 1px;
   background: #f8f8f8;
   border: 1px solid #dddddd;
+}
+.token.tag {
+  display: inline;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  border-radius: inherit;
+  font-weight: inherit;
+  white-space: inherit;
 }
 
 .token.comment,
