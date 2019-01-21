@@ -9,7 +9,7 @@ image: images/downwithpgp.png
 date: "2019-01-15T14:41:53-06:00"
 description: Console application demonstrating PGP encryption.
 tags:
-  - "C#"
+  - CSharp
   - PGP
 ---
 
