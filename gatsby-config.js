@@ -9,7 +9,6 @@ module.exports = {
       feed_url: config.siteUrl + config.siteRss,
       title: config.siteTitle,
       description: config.siteDescription,
-      // image_url: `https://api.adorable.io/avatars/285/site.png`,
       author: config.userName,
       copyright: config.copyright
     }
@@ -88,7 +87,6 @@ module.exports = {
                 feed_url
                 title
                 description
-                image_url
                 author
                 copyright
               }
