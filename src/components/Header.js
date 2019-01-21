@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import HomeNav from './HomeNav'
-import logo from '../../public/logos/codejournTrans.png';
 
 const Header = ({image, title, tagline}) => <header
     className="site-header outer"
@@ -11,7 +10,7 @@ const Header = ({image, title, tagline}) => <header
     <div className="inner">
         <div className="site-header-content">
             <h1 className="site-title">
-                <img className="header-logo" src={logo}></img>
+                <img className="header-logo" src={"logos/codejournTrans.png"}></img>
                 {/* { title } */}
             </h1>
             <h2 className="site-description">
