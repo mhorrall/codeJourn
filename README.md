@@ -1,3 +1,4 @@
-# CodeJourn | A blog about my coding adventures
-Matt Horrall
+# CodeJourn
+
+A blog about my coding adventures devloped using GatsbyJS.
 
