@@ -2,15 +2,15 @@
 templateKey: blog-post
 path: /csharppgp
 title: You down with PGP?
-authorImage: https://github.com/mhorrall.png
 author: Matt Horrall
-authorTwitter: MattHorrall
-image: images/downwithpgp.png
-date: "2019-01-15T14:41:53-06:00"
-description: Console application demonstrating PGP encryption.
+authorImage: 'https://github.com/mhorrall.png'
+authorTwitter: MattHorall
+image: /img/downwithpgp.png
 tags:
   - CSharp
   - PGP
+date: '2019-01-15T14:41:53-06:00'
+description: Console application demonstrating PGP encryption.
 ---
 
 I recently was given a task at work to encrypt / decrypt files using PGP. Prior to this assignment I had never even heard of PGP so I thought it would make a good blog post.
