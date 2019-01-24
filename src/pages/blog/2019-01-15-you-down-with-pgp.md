@@ -5,7 +5,7 @@ title: You down with PGP?
 authorImage: https://github.com/mhorrall.png
 author: Matt Horrall
 authorTwitter: MattHorrall
-image: ./images/downwithpgp.png
+image: ./img/downwithpgp.png
 date: "2019-01-15T14:41:53-06:00"
 description: Console application demonstrating PGP encryption.
 tags:

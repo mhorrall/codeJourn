@@ -7,9 +7,9 @@ import Footer from '../components/Footer'
 import TagList from '../components/TagList'
 import Layout from "../components/layout"
 
-export default function Tags({pathContext}) {
+export default function Tags({pageContext}) {
 
-    const {posts, post, tag} = pathContext
+    const {posts, post, tag} = pageContext
     const sortedTags = Object
         .keys(posts)
         .sort();

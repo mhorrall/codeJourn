@@ -2160,6 +2160,7 @@ img {
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  z-index: 1;
 }
 .tag-link:hover {
   background-color: #15171a;

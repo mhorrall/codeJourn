@@ -1,12 +1,12 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Nav from './Nav'
+import React from "react";
+import Nav from "./Nav";
 
-const Navbar = () => 
-    <header className="site-header outer">
-        <div className="inner">
-            <Nav />
-        </div>
-    </header>
+const Navbar = () => (
+  <header className="site-header outer">
+    <div className="inner">
+      <Nav />
+    </div>
+  </header>
+);
 
-export default Navbar
+export default Navbar;

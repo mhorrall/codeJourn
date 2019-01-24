@@ -1,5 +1,5 @@
-const path = require('path');
-const pagination = require('gatsby-paginate');
+const path = require("path");
+const pagination = require("gatsby-paginate");
 
 const createTagPages = (createPage, edges) => {
   const tagTemplate = path.resolve(`src/templates/tags.js`);
@@ -38,12 +38,15 @@ const createTagPages = (createPage, edges) => {
   });
 };
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             excerpt(pruneLength: 200)
@@ -55,7 +58,22 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               authorTwitter
               date(formatString: "MMMM DD, YYYY")
               description
-              image
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1000) {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                    originalImg
+                    originalName
+                  }
+                }
+              }
               path
               tags
               templateKey
@@ -66,9 +84,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       }
     }
   `).then(result => {
-
     const posts = result.data.allMarkdownRemark.edges;
-    const blogposts = posts.filter(post => post.node.frontmatter.templateKey === 'blog-post');
+    const blogposts = posts.filter(
+      post => post.node.frontmatter.templateKey === "blog-post"
+    );
 
     createTagPages(createPage, blogposts);
 
@@ -84,7 +103,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.js`),
+        component: path.resolve(
+          `src/templates/${String(node.frontmatter.templateKey)}.js`
+        ),
         context: {}
       });
     });
