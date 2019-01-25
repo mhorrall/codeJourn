@@ -36,7 +36,8 @@ const IndexPage = ({ data, pageContext }) => {
                 <BlogCard
                   key={node.id}
                   path={node.frontmatter.path}
-                  image={node.frontmatter.image}
+                  // image={node.frontmatter.image}
+                  image={node.frontmatter.image.childImageSharp.fluid}
                   tag={node.frontmatter.tags[0]}
                   title={node.frontmatter.title}
                   date={node.frontmatter.date}

@@ -5,7 +5,7 @@ import HomeNav from '../components/HomeNav'
 import BlogCard from '../components/BlogCard'
 import Footer from '../components/Footer'
 import TagList from '../components/TagList'
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 export default function Tags({pageContext}) {
 
