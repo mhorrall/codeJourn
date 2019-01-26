@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Tag from "../components/Tag";
 import AuthorCard from "../components/AuthorCard";
 import Footer from "../components/Footer";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 

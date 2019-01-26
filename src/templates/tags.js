@@ -4,7 +4,7 @@ import HomeNav from '../components/HomeNav'
 import BlogCard from '../components/BlogCard'
 import Footer from '../components/Footer'
 import TagList from '../components/TagList'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import {graphql} from 'gatsby'
 import Img from 'gatsby-image'
 

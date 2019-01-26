@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import BlogCard from "../components/BlogCard";
 import PaginateLink from "../components/PaginateLink";
 import Footer from "../components/Footer";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { graphql } from "gatsby";
 // import { checkPropTypes } from "prop-types";
 
