@@ -81,6 +81,23 @@ module.exports = {
           }
         ]
       }
+    }, {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon-16x16.png",
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
     }
   ]
 };
