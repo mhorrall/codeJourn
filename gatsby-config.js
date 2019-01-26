@@ -15,15 +15,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    {
+    `gatsby-plugin-styled-components`, {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
         name: "pages"
       }
-    },
-    {
+    }, {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/img`,
@@ -32,19 +30,16 @@ module.exports = {
     },
     `gatsby-remark-copy-linked-files`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
+    `gatsby-plugin-sharp`, {
       resolve: `gatsby-remark-images`,
       options: {
         maxWidth: 1400
       }
-    },
-    {
+    }, {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-responsive-iframe`,
-          {
+          `gatsby-remark-responsive-iframe`, {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-"
@@ -52,22 +47,19 @@ module.exports = {
           }
         ]
       }
-    },
-    {
+    }, {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: config.googleAnalyticsID
       }
-    },
-    {
+    }, {
       resolve: "gatsby-plugin-nprogress",
       options: {
         color: config.themeColor
       }
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-catch-links`,
-    {
+    `gatsby-plugin-catch-links`, {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
@@ -82,89 +74,12 @@ module.exports = {
             src: "/logos/codejournBlackWhite192.png",
             sizes: "129x29",
             type: "image/png"
-          },
-          {
+          }, {
             src: "/logos/codejournBlackWhite512.png",
             sizes: "512x78",
             type: "image/png"
           }
         ]
-      }
-    },
-
-    "gatsby-plugin-offline",
-    {
-      resolve: "gatsby-plugin-feed",
-      options: {
-        setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "CodeJourn";
-          return ret;
-        },
-        query: `
-        {
-          site {
-            siteMetadata {
-              rssMetadata {
-                site_url
-                feed_url
-                title
-                description
-                author
-                copyright
-              }
-            }
-          }
-        }
-      `
-        // ,
-        //   feeds: [
-        //     {
-        //       serialize(ctx) {
-        //         const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
-        //         return ctx.query.allMarkdownRemark.edges.map(edge => ({
-        //           categories: edge.node.frontmatter.tags,
-        //           date: edge.node.frontmatter.date,
-        //           title: edge.node.frontmatter.title,
-        //           description: edge.node.frontmatter.description,
-        //           author: rssMetadata.author,
-        //           url: rssMetadata.site_url + edge.node.frontmatter.path,
-        //           guid: rssMetadata.site_url + edge.node.frontmatter.path,
-        //           custom_elements: [
-        //             {
-        //               "content:encoded": edge.node.html
-        //             }
-        //           ]
-        //         }));
-        //       },
-        //       query: `
-        //       {
-        //         allMarkdownRemark(
-        //           limit: 1000,
-        //           sort: { order: DESC, fields: [frontmatter___date] },
-        //         ) {
-        //           edges {
-        //             node {
-        //               excerpt(pruneLength: 200)
-        //               html
-        //               id
-        //               frontmatter {
-        //                 path
-        //                 description
-        //                 title
-        //                 image
-        //                 date
-        //                 tags
-        //               }
-        //             }
-        //           }
-        //         }
-        //       }
-        //     `,
-        //       output: config.siteRss
-        //     }
-        //   ]
       }
     }
   ]
