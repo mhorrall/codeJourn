@@ -446,6 +446,7 @@ body {
   z-index: 90;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  min-height: 500px;
 }
 .outer {
   position: relative;
@@ -470,11 +471,11 @@ body {
 }
 .site-header {
   position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  /* padding-top: 0px;
+  padding-bottom: 12px; */
   color: #fff;
-  background: #090a0b no-repeat 50%;
-  background-size: cover;
+  background: #090a0b no-repeat 50%; 
+  /* background-size: cover;  */
 }
 .site-header:before {
   bottom: 0;

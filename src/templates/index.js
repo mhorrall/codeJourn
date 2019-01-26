@@ -24,7 +24,8 @@ const IndexPage = ({ data, pageContext }) => {
         </Helmet>
 
         <Header
-          image="https://casper.ghost.org/v1.0.0/images/blog-cover.jpg"
+          // image="https://casper.ghost.org/v1.0.0/images/blog-cover.jpg"
+          // image="../img/blogtitle1.jpg"
           title="CodeJourn"
           tagline="Code Journal Blog"
         />
@@ -36,7 +37,6 @@ const IndexPage = ({ data, pageContext }) => {
                 <BlogCard
                   key={node.id}
                   path={node.frontmatter.path}
-                  // image={node.frontmatter.image}
                   image={node.frontmatter.image.childImageSharp.fluid}
                   tag={node.frontmatter.tags[0]}
                   title={node.frontmatter.title}

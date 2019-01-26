@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import githubLogo from '../img/github-icon-white.svg'
-import youtubeLogo from '../img/youtube-logo.svg'
 import twitterLogo from '../img/twitter-icon.svg'
 
 const HomeNav = ({isHome}) => <nav className="site-nav">

@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import BgImage from "./../components/BgImage";
 
 const Template = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -17,15 +16,8 @@ const Template = ({ data }) => {
       <div>
         <Navbar />
         <Helmet title={`Blog | ${post.frontmatter.title}`} />
-        {/* <div
-          className="blog-post-header"
-          style={{
-            backgroundImage: `url(${post.frontmatter.image.childImageSharp.fluid
-              .srcSet})`
-          }}
-        > */}
         <div className="blog-post-header" style={{ position: `relative` }}>
-          <Img
+        <Img
             fluid={post.frontmatter.image.childImageSharp.fluid}
             css={{ top: 0, left: 0, right: 0, bottom: 0 }}
             style={{
