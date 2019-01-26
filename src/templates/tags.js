@@ -31,11 +31,7 @@ function Tags({pageContext, data}) {
                             style={{
                             position: `absolute`,
                             zIndex: 0
-                        }}/> {/* <header
-                        className="site-header outer"
-                        style={{
-                        backgroundImage: 'url(https://casper.ghost.org/v1.0.0/images/blog-cover.jpg)'
-                    }}> */}
+                        }}/> 
                         <div className="inner">
                             <div className="site-header-content">
                                 <h1 className="site-title">
@@ -82,7 +78,7 @@ function Tags({pageContext, data}) {
         <Layout>
             <div>
                 <div className="home-template">
-                    <Header // image='https://casper.ghost.org/v1.0.0/images/blog-cover.jpg'
+                    <Header
                         title="Tags"/>
                     <main id="site-main" className="site-main outer" role="main">
                         <div className="inner">

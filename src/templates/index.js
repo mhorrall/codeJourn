@@ -24,8 +24,6 @@ const IndexPage = ({ data, pageContext }) => {
         </Helmet>
 
         <Header
-          // image="https://casper.ghost.org/v1.0.0/images/blog-cover.jpg"
-          // image="../img/blogtitle1.jpg"
           title="CodeJourn"
           tagline="Code Journal Blog"
         />
