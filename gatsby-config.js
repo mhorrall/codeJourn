@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `CodeJourn`,
     siteUrl: config.siteUrl,
+    disqus: config.disqusId,
     rssMetadata: {
       site_url: config.siteUrl,
       feed_url: config.siteUrl + config.siteRss,

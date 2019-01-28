@@ -7,9 +7,14 @@ import Footer from "../components/Footer";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import { DiscussionEmbed } from "disqus-react";
 
 const Template = ({ data }) => {
   const { markdownRemark: post } = data;
+  const disqusConfig = {
+    identifier: post.id,
+    title: post.frontmatter.title,
+  };
 
   return (
     <Layout>
@@ -21,8 +26,7 @@ const Template = ({ data }) => {
             fluid={post.frontmatter.image.childImageSharp.fluid}
             css={{ top: 0, left: 0, right: 0, bottom: 0 }}
             style={{
-              position: `absolute`,
-              zIndex: -1
+              position: `absolute`
             }}
           />
           {post.frontmatter.tags.map((n, i) => {
@@ -42,15 +46,17 @@ const Template = ({ data }) => {
                     __html: post.html
                   }}
                 />
-                <hr />
                 <AuthorCard
                   image={post.frontmatter.authorImage}
                   name={post.frontmatter.author}
                   twitter={post.frontmatter.authorTwitter}
                 />
+                <hr />
+                <DiscussionEmbed shortname={data.site.siteMetadata.disqus} config={disqusConfig} />
               </div>
             </article>
           </div>
+         
         </main>
         <Footer />
       </div>
@@ -62,6 +68,12 @@ export default Template;
 
 export const pageQuery = graphql`
   query($path: String!) {
+    site {
+      siteMetadata {
+        disqus
+      }
+    }
+
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
